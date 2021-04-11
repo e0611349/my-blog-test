@@ -1,1 +1,2 @@
-Django==2.2.19
+pip install gunicorn django-heroku
+pip freeze > requirements.txt

@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'q&ptvp#)g!!z_jtd$c1ux7$q@656+2-4m(6x!-95sl_!y9lr6p'
+SECRET_KEY = 'vq*n7*1efb(0mzl987ylc+jz@mwjgf*8)x8*157owko2vi1qkn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -120,3 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+import os
+import django_heroku
+
+if 'DYNO' in os.environ:
+    django_heroku.settings(locals())
